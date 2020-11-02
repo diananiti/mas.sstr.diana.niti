@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="gson-2.8.0-javadoc">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../IAISC/materiale/Mater AN 1/SSATR - Letea/LABORATOR/Lab 1/gson/gson-2.8.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../IAISC/materiale/Mater AN 1/SSATR - Letea/LABORATOR/Lab 1/gson/gson-2.8.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../IAISC/materiale/Mater AN 1/SSATR - Letea/LABORATOR/Lab 1/gson/gson-2.8.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
