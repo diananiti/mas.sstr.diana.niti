@@ -1,0 +1,35 @@
+//sensor for reading the temperature
+sensor
+	PortTemperature	temperature	uses	DriverTemperature;
+
+//actuators for controlling the motor and the valve 
+actuator
+	PortCommand	command	uses	DriverHeaterControl;
+
+output
+	PortCommand	scommand	:= InitCommand;
+
+	
+//task list
+task	T_Ctrl(PortTemperature t) output(scommand) state(){
+	schedule TaskCodeTemperatureControl(t,scommand)
+}
+
+//actuator drivers
+driver D_Comm(scommand) output(PortCommand v){
+	if constant_true() then copy_PortCommand(scommand,v)
+}
+
+//sensor drivers
+driver DriverTemperature(temperature) output (PortTemperature l){
+	if constant_true() then copy_PortTemperature(temperature,l)
+}
+
+
+start control_1 {
+	mode control_1() period 1000{
+		actfreq 1 do command(D_Comm);
+		taskfreq 1 do T_Ctrl(DriverTemperature);
+	}
+
+}	
